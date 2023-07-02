@@ -1,0 +1,53 @@
+format = """
+[╭─](green) $username\
+            [@](blue)\
+            $hostname\
+            $directory\
+            $git_branch\
+            $git_status\
+            $git_metrics\
+            $package\
+            $terraform\
+            $docker_context\
+            $python\
+            $docker_context\
+            $fill $cmd_duration $jobs $time\
+            $line_break\
+[╰──](green)$character
+"""
+
+palette = 'main'
+
+[palettes.main]
+blue = '#00ffe9'
+pink = '#fe76fe'
+purple = '#B16BFB'
+green = '#89FF93'
+red = '#FF1D83'
+
+[fill]
+symbol = " "
+
+[time]
+style = "bright-yellow"
+disabled = false
+
+[username]
+style_user = "purple"
+style_root = "red"
+format = "\\[[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[$hostname](pink)\] '
+trim_at = "."
+disabled = false
+
+[directory]
+read_only = ""
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
