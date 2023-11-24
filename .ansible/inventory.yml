@@ -1,0 +1,51 @@
+---
+all:
+  children:
+    servers:
+      hosts:
+        mew:
+          ansible_host: 10.10.1.10  
+
+    containers:
+      hosts:
+        nextcloud:
+          ansible_host: 10.10.2.2
+          ansible_user: root
+          ansible_python_interpreter: /usr/bin/python3
+        collabora:
+          ansible_host: 10.10.2.3
+          ansible_user: root
+          ansible_python_interpreter: /usr/bin/python3
+        vikunja:
+          ansible_host: 10.10.2.4
+          ansible_user: root
+          ansible_python_interpreter: /usr/bin/python3 
+        freshrss:
+          ansible_host: 10.10.2.5
+          ansible_user: root
+          ansible_python_interpreter: /usr/bin/python3   
+        tandoor:
+          ansible_host: 10.10.2.6
+          ansible_user: root
+          ansible_python_interpreter: /usr/bin/python3     
+        bookstack:
+          ansible_host: 10.10.2.10
+          ansible_user: root
+          ansible_python_interpreter: /usr/bin/python3
+        linkstack:
+          ansible_host: 10.10.2.20
+          ansible_user: root
+          ansible_python_interpreter: /usr/bin/python3
+        mediaserver:
+          ansible_host: 10.10.3.1
+          ansible_user: root
+          ansible_python_interpreter: /usr/bin/python3
+        downloadserver:
+          ansible_host: 10.10.3.2
+          ansible_user: root
+          ansible_python_interpreter: /usr/bin/python3
+
+    control:
+      hosts:
+        local:
+          ansible_connection: local
